@@ -1,15 +1,11 @@
-version: "3.8"
-
 volumes:
   mariadb:
-    name: mariadb
     driver: local
     driver_opts:
       device: /home/emauduit/data/mariadb
       o : bind
       type : none
   wordpress:
-    name: wordpress
     driver: local
     driver_opts:
       device: /home/emauduit/data/wordpress
@@ -18,7 +14,7 @@ volumes:
 
 networks:
   inception:
-    name: inception
+    driver: bridge
 
 services:
 #mariadb
